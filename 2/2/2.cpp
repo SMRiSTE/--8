@@ -1,6 +1,7 @@
 ﻿#include <iostream>
 
 class Fraction {
+
 private:
     int numerator;
     int denominator;
@@ -53,9 +54,20 @@ public:
         return temp;
     }
 
-    void print() {
-        std::cout << numerator << '/' << denominator << std::endl;
+    friend std::ostream& operator<<(std::ostream& left, const Fraction& right) {
+        left << right.numerator << "/" << right.denominator;
+        return left;
     }
+
+    int pf() {
+       return (numerator , "/" , denominator);
+    }
+
+    void print() {
+        std::cout << numerator << '/' << denominator <<  std::endl;
+    }
+
+
 };
 
 int main() {
@@ -80,28 +92,28 @@ int main() {
     Fraction mult = f1 * f2;
     Fraction div = f1 / f2;
 
-    std::cout << "f1 + f2 = ";
+    std::cout << f1 << " + " << f2 << " = ";
     sum.print();
 
-    std::cout << "f1 - f2 = ";
+    std::cout << f1 << " - " << f2 << " = ";
     sub.print();
 
-    std::cout << "f1 * f2 = ";
+    std::cout << f1 << " * " << f2 << " = ";
     mult.print();
 
-    std::cout << "f1 / f2 = ";
+    std::cout << f1 << " / " << f2 << " = ";
     div.print();
 
-    std::cout << "++f1 * f2 = ";
+    std::cout << "++" << f1 << " * " << f2 << " = ";
     (++f1).print();
 
-    std::cout << "Value of f1 = ";
+    std::cout << "Значение дроби 1 = ";
     f1.print();
 
-    std::cout << "f1-- * f2 = ";
+    std::cout << f1 << "--" << " * " << f2 << " = ";
     (f1-- * f2).print();
 
-    std::cout << "Value of f1 = ";
+    std::cout << "Значение дроби 1 = ";
     f1.print();
 
     return 0;
