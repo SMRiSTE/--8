@@ -59,10 +59,6 @@ public:
         return left;
     }
 
-    int pf() {
-       return (numerator , "/" , denominator);
-    }
-
     void print() {
         std::cout << numerator << '/' << denominator <<  std::endl;
     }
